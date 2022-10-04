@@ -7,27 +7,28 @@
     "url": "https://github.com/w3c/Mobile-Checker.git"
   },
   "dependencies": {
-    "binary-reader":"0.1.2",
-    "compression": "1.0.11",
-    "css": "2.1.0",
+    "binary-reader": "0.1.2",
+    "compression": "1.7.1",
+    "css": "2.2.2",
     "easyimage": "1.0.2",
     "effective-domain-name-parser": "0.0.1",
-    "ejs": "1.0.0",
-    "express": "4.4.1",
+    "ejs": "3.1.7",
+    "express": "4.16.0",
     "headless": "0.2.1",
-    "image-headers":"0.3.3",
+    "image-headers": "0.3.3",
     "insafe": "^0.3.0",
     "intl": "^0.1.4",
-    "ip": "0.3.1",
+    "ip": "1.1.5",
     "media-type": "0.1.0",
     "metaviewport-parser": "^0.0.1",
-    "mkdirp": "0.5.0",
-    "mobile-web-browser-emulator": "0.0.3 - 0.0.4",
-    "node-uuid": "1.4.1",
+    "mkdirp": "0.5.2",
+    "mobile-web-browser-emulator": "0.0.6",
+    "node-uuid": "1.4.6",
     "q": "1.0.1",
     "request": "^2.58.0",
     "jsonschema": "^1.0.1",
-    "socket.io": "1.0.4"
+    "socket.io": "3.0.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "coveralls": "^2.11.2",
@@ -40,6 +41,9 @@
     "coverage": "istanbul cover _mocha",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "start": "node app.js",
-    "test": "mocha --timeout 20000 --globals Intl,IntlPolyfill,ErrorHandler"
-  }
+    "test": "mocha --timeout 20000 --globals Intl,IntlPolyfill,ErrorHandler",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
